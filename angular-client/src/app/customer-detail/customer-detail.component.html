@@ -1,0 +1,12 @@
+<div *ngIf="customer" class="col-lg-6">
+  <form>
+    <div class="form-group">
+      <label for="cust_name">Name</label>
+      <input class="form-control" id="cust_name" [(ngModel)]="customer.name" name="name">
+    </div>
+    <div class="form-group">
+      <label for="cust_email">Email</label>
+      <input class="form-control" id="cust_email" [(ngModel)]="customer.email" name="email">
+    </div>
+  </form>
+</div>

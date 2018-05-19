@@ -1,0 +1,15 @@
+<h2>Customers List</h2>
+<table class="table table-bordered">
+  <thead>
+  <th>Name</th>
+  <th>Email</th>
+  </thead>
+  <tbody>
+  <tr *ngFor="let customer of customers">
+    <td><a (click)="onSelect(customer)">{{customer.name}}</a></td>
+    <td>{{customer.email}}</td>
+  </tr>
+  </tbody>
+</table>
+
+<app-customer-detail [customer]="selectedCust"></app-customer-detail>
