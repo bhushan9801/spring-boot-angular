@@ -2,12 +2,14 @@ package org.helios.springboot.security;
 
 import org.helios.springboot.domain.Customer;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.http.*;
+import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.Collections;
@@ -22,7 +24,8 @@ public class CustomerControllerTest {
     @Test
     public void testAuditWith100Updates() {
         String email = "bbanner@usa.net";
-        TestRestTemplate testRestTemplate = restTemplate.withBasicAuth("bhushan", "password");
+//        TestRestTemplate testRestTemplate = restTemplate.withBasicAuth("bhushan", "password");
+        TestRestTemplate testRestTemplate = restTemplate;
         for (int index = 0; index < 10; index++) {
             HttpHeaders headers = new HttpHeaders();
             headers.setContentType(MediaType.APPLICATION_JSON_UTF8);
